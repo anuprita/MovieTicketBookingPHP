@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Landing Page template</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+		</script>
+			<link rel="icon" href="images/favicon.ico"/>
+		<script type="text/javascript">
+ function validate()
+{
+	var x = document.forms["reg_form"]["email"].value;
+   
+    var attheratepos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (dotpos== -1 || attheratepos < 1 || dotpos<attheratepos+2 || dotpos+2>=x.length) 
+	{
+        document.forms["reg_form"]["email"].value="";
+		alert("Not a valid e-mail address");
+        return false;
+	}
+	
+	var p = document.forms["reg_form"]["password"].value;
+	var cp = document.forms["reg_form"]["confirm"].value;
+	
+	if(p.length < 6)
+	{document.forms["reg_form"]["password"].value = "";
+	document.forms["reg_form"]["confirm"].value="";
+	alert("Password should be at least 6 characters");
+	return false;
+	}
+	if(p!=cp)
+	{
+	document.forms["reg_form"]["confirm"].value="";
+	document.forms["reg_form"]["password"].value="";
+	alert("Passwords don't match");
+	return false;
+	}
+	
+	var phone = document.forms["reg_form"]["phone"].value;
+	if(phone.length != 10)
+	{
+	alert ("Phone number should be 10 digits only");
+	return false;
+	}
+	
+}
+        </script>
+		<script>
+$(document).ready(function(){
+$("#check_username_availability").click(function () { //user types username on inputfiled
+var username = $("#username1").val();
+   $.post("check_name.php", {'username':username}, function(data) { 
+   $("#user-result").html(data);
+	//dump the data received from PHP page
+   });
+});
+});
+</script>
+
+	</head>
+	<body>
+<div class="container-full">
+
+<div id="Title" style="text-align:center">
+<h1> Register Here. </h1>
+<br/>
+<h3> Give us a few details and then you're set! </h3>
+</div>      
+<br/>
+<table>
+<tr>
+<form name="reg_form" method="POST" action="register_exec.php" onsubmit="return validate()">
+<td>
+Name: 
+</td>
+<td>
+<input type="text" name="name">
+</td>
+</tr>
+<tr>
+<td>
+Email: 
+</td>
+<td>
+<input id="username1" type="text" name="email">
+</td>
+</tr>
+<tr>
+<td>
+<input type='button' id='check_username_availability' value='Check'>
+</td>
+<td>
+<div id="user-result"></div>
+</td>
+</tr>
+<tr>
+<td>
+Password: 
+</td>
+<td>
+<input type="password" name="password">
+</td>
+</tr>
+<tr>
+<td>
+Confirm Password:
+</td>
+<td>
+ <input type="password" name="confirm">
+</td>
+</tr>
+<tr>
+<td>
+Phone Number: 
+</td>
+<td>
+<input type="text" name="phone">
+</td>
+</tr>
+<tr>
+<td height="50px">
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<input id="button" type="submit" name="Submit" value="Register">
+</td>
+</tr>
+</form>
+</table>       
+</div>
+      
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head> 
+<title>
+Upcoming Movies
+</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/anu.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="personal.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function call(){
+	$("#div1").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#div2").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#div3").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#div4").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#div5").fadeIn(1000).delay(3000).fadeOut(1000)})})})});
+	$("#p1").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#p2").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#p3").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#p4").fadeIn(1000).delay(3000).fadeOut(1000,function(){$("#p5").fadeIn(1000).delay(3000).fadeOut(1000,call)})})})});
+	});
+	
+</script>
+</head>
+
+<body>
+<div class="container-full">
+<img id="poster" src="images/poster.jpg"/>
+
+
+<div id="Image">
+<img id="div1" src="Movie/soon/soon1.jpg" alt="Image One"></img> 
+<img id="div2" src="Movie/soon/soon2.jpg" alt="Image Two"></img>
+<img id="div3" src="Movie/soon/soon3.jpg" alt="Image Three"></img>
+<img id="div4" src="Movie/soon/soon4.jpg" alt="Image Four"></img>
+<img id="div5" src="Movie/soon/soon5.jpg" alt="Image Five"></img>
+</div>
+
+<div id="SlideTitle">
+<p id="p1" style="display:none">Coming Soon</p>
+<p id="p2" style="display:none">To Cinemas near you</p>
+<p id="p3" style="display:none">Buy Tickets</p>
+<p id="p4" style="display:none">only at</p>
+<p id="p5" style="display:none">Ticket-Machine!</p>
+</div>
+</div>
+<a href="index.php"> Go Back </a>
+</body>
+</html>
